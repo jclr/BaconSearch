@@ -1,0 +1,20 @@
+{
+  "film": {
+    "image": "http://image.tmdb.org/t/p/w185/tvSlBzAdRE29bZe5yYWrJ2ds137.jpg",
+    "name": "Star Wars: Episode IV - A New Hope"
+  },
+  "cast": [
+    {
+      "name": "Mark Hamill",
+      "image": "http://image.tmdb.org/t/p/w185/uCtDSh3taY4YFeBBGKlbB9DInvu.jpg"
+    },
+    {
+      "name": "Tom Hanks",
+      "image": "http://image.tmdb.org/t/p/w185/xxPMucou2wRDxLrud8i2D4dsywh.jpg"
+    },
+    {
+      "name": "Quentin Tarantino",
+      "image": "http://image.tmdb.org/t/p/w185/6grjDWpEIPL5QdRbUZFxVEp5TCd.jpg"
+    }
+  ]
+}

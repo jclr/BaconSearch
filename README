@@ -1,0 +1,20 @@
+BaconSearch withh find the shortest path from a given actor to Kevin Bacon, given a list of files with film and actor data. In order to run Bacon Search, do the following:
+
+1.  Make sure you're in the root directory of this project
+2.  Use the following command to run BaconSearch:
+
+      python bacon.py <unzipped directory with json film files> <origin actor>
+
+    For example, if I wanted to find the path from Morgan Freeman to Kevin Bacon, I would run:
+
+      python bacon.py data/films "Morgan Freeman"
+
+3.  To run tests, run this command:
+
+      python testBacon.py <unzipped directory with json film files>
+
+    For example:
+
+      python testBacon.py data/films
+
+Please note this program was developed using Python 2.7.3 and has not been tested with other Python versions.
