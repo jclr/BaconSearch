@@ -1,0 +1,67 @@
+body {
+  font-family: verdana;
+  background-image: url('../img/bacon.jpg');
+}
+
+.search {
+  width: 580px;
+  padding-top: 75px;
+  margin: 0 auto;
+}
+
+.search h1 {
+  color: #f0f0f0;
+  text-align: center;
+}
+
+.search input {
+  width: 100%;
+  font-size: 24px;
+  padding: 20px 20px 15px 15px;
+  margin-bottom: 25px;
+}
+
+.search a {
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-decoration: none;
+  background-color: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-top: 1px solid #ccc;
+  border-right: 1px solid #333;
+  border-bottom: 1px solid #333;
+  border-left: 1px solid #ccc;
+}
+
+.results {
+  width: 580px;
+  margin: 0 auto;
+}
+
+.arrow {
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-top: 20px solid #69e;
+  display: block;
+  margin: 0 auto;
+}
+
+.result {
+  padding: 15px;
+}
+
+.result img {
+  display: block;
+  margin : 0 auto;
+  padding: 10px;
+}
+
+.result p {
+  text-align: center;
+  padding: 10px;
+  color: #f0f0f0;
+}

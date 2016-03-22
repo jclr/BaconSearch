@@ -48,7 +48,11 @@ class BaconSearch:
           for connection in cast:
             connectionName = connection['name']
             if connectionName != name:
-              graph[name].append((connectionName, film, 0))
+              if 'image' in connection:
+                image = connection['image']
+              else:
+                image = "No Image Available"
+              graph[name].append((connectionName, image, film, 0))
     # Save graph as class attribute
     self.graph = graph
 
@@ -68,7 +72,9 @@ class BaconSearch:
     # Keep track of possible paths to explore
     paths = []
 
+    # Keep track of names seen
     namesSeen = []
+
     # Start with first node
     paths.append([(self.currOrigin,)])
 
@@ -77,6 +83,8 @@ class BaconSearch:
         path = paths.pop(0)
         # Get last node in path to inspect
         connection = path[-1]
+
+        # Check for cycles
         if connection[0] in namesSeen:
           continue
         else:
@@ -95,7 +103,7 @@ class BaconSearch:
             paths.append(adjPath)
 
   # Pretty print the shortest path found with searchGraph
-  # @param path: path
+  # @return path: path
   def printPath(self):
     # If search hasn't been run yet, return error
     if not self.currOrigin:
@@ -105,7 +113,7 @@ class BaconSearch:
       return "No result found"
 
     # Construct origin name and film
-    string = self.currOrigin + ' in ' + self.currPath[1][1] + ' -> '
+    string = self.currOrigin + ' in ' + self.currPath[1][2] + ' -> '
     path = self.currPath[1:]
 
     # String together path to form result string (grouping the next film with the current
@@ -115,5 +123,19 @@ class BaconSearch:
         return string + self.currTarget
       else:
         nextConnection = path[i + 1]
-        string += connection[0] + ' in ' + nextConnection[1] + ' -> '
+        string += connection[0] + ' in ' + nextConnection[2] + ' -> '
     return string
+
+  # Return JSON representation of path for web consumption
+  # @return JSON path for web consumption
+  def getJSONPath(self):
+    # If search hasn't been run yet, return error
+    if not self.currOrigin:
+      return None
+    # If path isn't valid, tell user no path was found
+    if not self.currPath:
+      return None
+
+    return {"data": self.currPath}
+
+
