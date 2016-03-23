@@ -136,6 +136,17 @@ class BaconSearch:
     if not self.currPath:
       return None
 
+    # Fetch picture for actor in search query
+    node = self.graph[self.currPath[1][0]]
+
+    image = None
+    for connection in node:
+      if connection[0] == self.currOrigin:
+        image = connection[1]
+        break
+
+    self.currPath[0] = self.currPath[0] + (image,)
+
     return {"data": self.currPath}
 
 
